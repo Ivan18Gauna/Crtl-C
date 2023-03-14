@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "imagen": "https://celadasa.vtexassets.com/arquivos/ids/211801-800-auto?v=637925433097900000&width=800&height=auto&aspect=true",
+        "nombre": "zapatillas",
+        "precio": 10000.00,
+        "stock": true
+    },
+    {
+        "id": 2,
+        "imagen": "https://redsport.vteximg.com.br/arquivos/ids/1127729-1000-1000/GA025006153.jpg?v=638066243004270000",
+        "nombre": "zapatillas",
+        "precio": 10000.00,
+        "stock": true
+    },
+    {
+        "id": 3,
+        "imagen": "https://www.newbalance.com.ar/media/catalog/product/cache/4/thumbnail/9df78eab33525d08d6e5fb8d27136e95/z/a/zapatillas-hombre-new-balance-disrupt-mdsrptlw-1-min_3.jpg",
+        "nombre": "zapatillas",
+        "precio": 10000.00,
+        "stock": true
+    }
+]

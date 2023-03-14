@@ -2,11 +2,11 @@ const axios = require('axios')
 const { Router } = require('express');
 require('dotenv').config();
 const {Productos} = require('../db')
+const {getProducts} = require('../controllers/productControllers')
 
 const router = Router();
 
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
+router.get('/products', getProducts)
 
 
 
