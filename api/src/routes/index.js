@@ -2,11 +2,15 @@ const axios = require('axios')
 const { Router } = require('express');
 require('dotenv').config();
 const {Productos} = require('../db')
-const {getProducts} = require('../controllers/productControllers')
+const {getProducts, createProduct, getAll} = require('../controllers/utils')
 
 const router = Router();
 
 router.get('/products', getProducts)
+
+router.get('/all', getAll)
+
+router.post('/agregarProducto', createProduct)
 
 
 
