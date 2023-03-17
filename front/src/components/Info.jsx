@@ -19,7 +19,7 @@ export function Info() {
           <div className="pr-5">
             <BsFillCreditCardFill />
           </div>
-          cuotas sin interes
+          Cuotas sin interes
         </div>
         <div class="text-black text-sm md:text-base lg:text-lg flex items-center max-sm:flex-col">
           <div className="pr-5">
@@ -35,7 +35,5 @@ export function Info() {
         </div>
       </div>
     </div>
-    
-
   );
 }
