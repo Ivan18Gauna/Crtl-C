@@ -1,4 +1,5 @@
-import { BiMenu } from "react-icons/bi";
+import { BiMenu , BiSearchAlt} from "react-icons/bi";
+
 
 export function NavBar() {
   const openMenu = () => {
@@ -12,7 +13,7 @@ export function NavBar() {
   };
   return (
     <div>
-      <nav className="bg-yellow-300 py-0 relative mb-2">
+      <nav className="bg-gray-100 py-0 relative mb-2">
         <div className="container mx-auto flex px-8 xl:px-0 ">
           <div className="flex flex-grow items-center">
             <img
@@ -27,35 +28,35 @@ export function NavBar() {
 
           <div
             id="menu"
-            className="lg:flex lg:relative lg:top-0 hidden flex-grow justify-between absolute top-20 left-0 bg-yellow-300 w-full items-center py-14 lg-py-0 px-8 rounded-2xl"
+            className="lg:flex lg:relative lg:top-0 hidden flex-grow justify-between absolute top-20 left-0 bg-gray-100 w-full items-center py-14 lg-py-0 px-8 rounded-2xl"
           >
             <div className="flex flex-col lg:flex-row mb-8 lg:mb-0 items-center">
               <a href="" className="lg:mr-7 mb-8 lg:mb-0">
-                Inicio
+                PRODUCTOS
               </a>
               <a href="" className="lg:mr-7 mb-8 lg:mb-0">
-                Inicio
+                LOCALES
               </a>
               <a href="" className="lg:mr-7 mb-8 lg:mb-0">
-                Inicio
+                PROMOS Y CUOTAS
               </a>
               <a href="" className="">
-                Inicio
+                CONTACTO
               </a>
             </div>
             <div className="flex flex-col lg:flex-row text-center ">
               <a
                 href=""
-                className="text-white border border-white py-2.5 px-5 rounded-md hover:bg-yellow-200 hover:text-black hover:border-black transition duration-500 ease-in-out lg:mr-4 mb-4 lg:mb-0"
+                className="text-black border border-black py-2.5 px-5 rounded-md hover:bg-yellow-200 hover:text-black hover:border-black transition duration-500 ease-in-out lg:mr-4 mb-4 lg:mb-0"
               >
-                Boton
+                <BiSearchAlt/>
               </a>
-              <a
+              {/* <a
                 href=""
                 className="text-white border border-white py-2.5 px-5 rounded-md hover:bg-yellow-200 hover:text-black hover:border-black transition duration-500 ease-in-out"
               >
                 Boton
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

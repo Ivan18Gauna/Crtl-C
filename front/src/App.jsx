@@ -1,4 +1,6 @@
-import { Card } from "./components/Card"
+import { Category } from "./components/Category"
+import { Flyer } from "./components/Flyer"
+import { Info } from "./components/Info"
 import { NavBar } from "./components/NavBar"
 
 
@@ -8,7 +10,9 @@ function App() {
   return (
     <div>
     <NavBar/>
-    <Card/>
+    <Flyer/>
+    <Category/>
+    <Info/>
     </div>
   )
 }
