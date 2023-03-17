@@ -6,37 +6,35 @@ const productos = require('./products.json')
 const Op = Sequelize.Op;
 require("dotenv").config();
 
-const getProducts = async(req, res) => {
-    console.log(productos)
-    res.status(200).send(productos)
-}
-
-const getAll = async(req, res) => {
-    const db = await Productos.findAll();
-    if (!db[0]) {
-        productos.map(async e => {
-            await Productos.create({
-                nombre: e.nombre,
-                imagen: e.imagen,
-                precio: e.precio
+const getAll = async() => {
+    try {
+        const db = await Productos.findAll();
+        if (!db[0]) {
+            productos.map(async e => {
+                await Productos.create({
+                    nombre: e.nombre,
+                    imagen: e.imagen,
+                    precio: e.precio
+                });
+                
             });
-        });
+        };
+        const allProducts = await Productos.findAll();
+
+        return allProducts;
+    } catch (error) {
+        console.log(error);
     }
-    const allProducts = await Productos.findAll()
-    res.status(200).send(allProducts)
 }
 
-const getByName = async(req, res) => {
-    const {name} = req.params;
-    console.log(name)
+const getByName = async(name) => {
     try {
         const products = await Productos.findAll({
             where: {
                 nombre: { [Op.iLike]: `%${name}%` }
             }
         })
-        console.log(products)
-        res.status(200).send(products);
+        return products;
     } catch (error) {
         console.log(error)
     }
@@ -60,5 +58,4 @@ module.exports = {
     createProduct,
     getAll,
     getByName,
-    getProducts
 }
