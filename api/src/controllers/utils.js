@@ -25,7 +25,7 @@ const getAll = async() => {
             });
         };
         const allProducts = await Productos.findAll({
-            include:[{model: Category}]
+            include:[{model: Category, attributes: ["category"]}]
         });
         return allProducts;
     } catch (error) {
