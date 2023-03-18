@@ -1,5 +1,5 @@
 const { default: axios } = require("axios");
-const { Productos } = require("../db");
+const { Productos, Category } = require("../db");
 const Sequelize = require("sequelize");
 const e = require("express");
 const productos = require('./products.json')
@@ -11,16 +11,22 @@ const getAll = async() => {
         const db = await Productos.findAll();
         if (!db[0]) {
             productos.map(async e => {
-                await Productos.create({
+                let actualProduct = await Productos.create({
                     nombre: e.nombre,
                     imagen: e.imagen,
                     precio: e.precio
                 });
-                
+                const [actualCategory, succes] = await Category.findOrCreate({
+                    where: {
+                      category: e.categoria,
+                    },
+                  });
+                await actualCategory.addProductos(actualProduct);
             });
         };
-        const allProducts = await Productos.findAll();
-
+        const allProducts = await Productos.findAll({
+            include:[{model: Category}]
+        });
         return allProducts;
     } catch (error) {
         console.log(error);
