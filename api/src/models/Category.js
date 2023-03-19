@@ -13,5 +13,12 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false
      }
+  },
+  {
+   createdAt: false,
+      updatedAt: false,
+      deletedAt: "borrado",
+      paranoid: true,
+      timestamps: true,
   });
 };
