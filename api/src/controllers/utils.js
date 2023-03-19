@@ -33,11 +33,11 @@ const getAll = async() => {
     }
 }
 
-const getByName = async(name) => {
+const getOne = async(id) => {
     try {
-        const products = await Products.findAll({
+        const products = await Products.findOne({
             where: {
-                nombre: { [Op.iLike]: `%${name}%` }
+                id: id
             }
         })
         return products;
@@ -62,7 +62,7 @@ const getByCategory = async(category) => {
         })
         return products;
     } catch (error) {
-        console.log("error")
+        console.log(error)
     }
 }
 
@@ -87,9 +87,33 @@ const createProduct = async(req, res) => {
     }
 };
 
+const deleteProduct = async(id) => {
+    console.log(id)
+    console.log(await Products.findOne({where: {id: id}}))
+    try {
+        await Products.destroy({
+            where: {id: id}
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const restoreProduct = async(id) => {
+    try {
+        await Products.restore({
+            where: {id: id}
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 module.exports = {
-    createProduct,
     getAll,
-    getByName,
-    getByCategory
+    getOne,
+    getByCategory,
+    createProduct,
+    deleteProduct,
+    restoreProduct
 }

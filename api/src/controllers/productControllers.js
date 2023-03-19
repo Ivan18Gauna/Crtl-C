@@ -2,13 +2,14 @@ const { default: axios } = require("axios");
 const { Products } = require("../db");
 const Sequelize = require("sequelize");
 const e = require("express");
-const productos = require('./products.json')
 const Op = Sequelize.Op;
 require("dotenv").config();
 const {
     getAll,
-    getByName,
-    getByCategory
+    getOne,
+    getByCategory,
+    deleteProduct,
+    restoreProduct
 } = require('./utils')
 
 const allProducts = async(req, res) => {
@@ -20,11 +21,11 @@ const allProducts = async(req, res) => {
     }
 }
 
-const productsByName = async(req, res) => {
-    let {name} = req.params;
+const oneProduct = async(req, res) => {
+    let {id} = req.params;
     try {
-        const products = await getByName(name);
-        res.status(200).send(products);
+        const product = await getOne(id);
+        res.status(200).send(product);
     } catch (error) {
         console.log(error);
     }
@@ -40,8 +41,31 @@ const productByCategory = async(req, res) => {
     }
 }
 
+const productDelete = async(req, res) => {
+    let {id} = req.params;
+    console.log(id);
+    try {
+        await deleteProduct(id);
+        res.status(200).send("Producto eliminado con exito");
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const productRestore = async(req, res) => {
+    let {id} = req.params;
+    try {
+        await restoreProduct(id);
+        res.status(200).send("Producto restaurado con exito");
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 module.exports = {
     allProducts,
-    productsByName,
-    productByCategory
+    oneProduct,
+    productByCategory,
+    productDelete,
+    productRestore
 }
