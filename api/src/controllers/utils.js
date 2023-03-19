@@ -66,8 +66,7 @@ const getByCategory = async(category) => {
     }
 }
 
-const createProduct = async(req, res) => {
-    let {nombre, imagen, precio, categoria} = req.body;
+const createProduct = async(nombre, imagen, precio, categoria) => {
     try {
         const actualProduct = await Products.create({
             nombre: nombre,
@@ -79,13 +78,29 @@ const createProduct = async(req, res) => {
                 category: categoria,
             },
         });
-        console.log(actualCategory)
         await actualCategory.addProducts(actualProduct);
-        res.status(200).send(actualProduct)
+        return actualProduct;
     } catch(error) {
         console.log(error)
     }
 };
+
+const editProduct = async(nombre, imagen, precio, categoria, id) => {
+    try {
+        const edited = await Products.update({
+                nombre,
+                imagen,
+                precio,
+                categoria
+            },
+            {
+                where: {id: id}
+        })
+        return edited;
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 const deleteProduct = async(id) => {
     console.log(id)
@@ -109,13 +124,21 @@ const restoreProduct = async(id) => {
     }
 }
 
-const createCategory = async(req, res) => {
-    let {category} = req.body;
+const getAllCategorys = async() => {
+    try {
+        const allCategorys = await Category.findAll()
+        return allCategorys;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const createCategory = async(category) => {
     try {
         const newCategory = await Category.create({
             category: category
         })
-        res.status(200).send(newCategory)
+        return newCategory;
     } catch (error) {
         console.log(error)
     }
@@ -126,7 +149,9 @@ module.exports = {
     getOne,
     getByCategory,
     createProduct,
+    editProduct,
     deleteProduct,
     restoreProduct,
+    getAllCategorys,
     createCategory
 }

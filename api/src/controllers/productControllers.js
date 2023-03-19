@@ -8,6 +8,8 @@ const {
     getAll,
     getOne,
     getByCategory,
+    createProduct,
+    editProduct,
     deleteProduct,
     restoreProduct
 } = require('./utils')
@@ -41,6 +43,27 @@ const productByCategory = async(req, res) => {
     }
 }
 
+const productCreate = async(req, res) => {
+    try {
+        const {nombre, imagen, precio, categoria} = req.body;
+        const newProduct = await createProduct(nombre, imagen, precio, categoria);
+        res.status(200).send(newProduct);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const productEdit = async(req, res) => {
+    const {id} = req.params;
+    const {nombre, imagen, precio, categoria} = req.body;
+    try {
+        const edited = await editProduct(nombre, imagen, precio, categoria, id)
+        res.status(200).send(edited);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 const productDelete = async(req, res) => {
     let {id} = req.params;
     console.log(id);
@@ -66,6 +89,8 @@ module.exports = {
     allProducts,
     oneProduct,
     productByCategory,
+    productCreate,
+    productEdit,
     productDelete,
     productRestore
 }
