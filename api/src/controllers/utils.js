@@ -109,11 +109,24 @@ const restoreProduct = async(id) => {
     }
 }
 
+const createCategory = async(req, res) => {
+    let {category} = req.body;
+    try {
+        const newCategory = await Category.create({
+            category: category
+        })
+        res.status(200).send(newCategory)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 module.exports = {
     getAll,
     getOne,
     getByCategory,
     createProduct,
     deleteProduct,
-    restoreProduct
+    restoreProduct,
+    createCategory
 }
