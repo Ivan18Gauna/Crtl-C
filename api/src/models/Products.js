@@ -3,7 +3,7 @@ const { DataTypes, INTEGER, STRING, FLOAT, BOOLEAN } = require('sequelize');
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define('productos', {
+  sequelize.define('products', {
      id:{
       type: DataTypes.INTEGER,
       primaryKey: true,
