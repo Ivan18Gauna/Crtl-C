@@ -6,7 +6,9 @@ const Op = Sequelize.Op;
 require("dotenv").config();
 const {
     getAllCategorys,
-    createCategory
+    createCategory,
+    deleteCategory,
+    restoreCategory
 } = require('./utils');
 
 const allCategorys = async(req, res) => {
@@ -19,10 +21,30 @@ const allCategorys = async(req, res) => {
 }
 
 const categoryCreate = async(req, res) => {
-    const {category} = req.body;
+    let {category} = req.body;
     try {
-        const newCategory = await createCategory(category);
+        let newCategory = await createCategory(category);
         res.status(200).send(newCategory)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const categoryDelete = async(req, res) => {
+    const {id} = req.params;
+    try {
+        await deleteCategory(id)
+        res.status(200).send("Categoria eliminada con exito.")
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const categoryRestore = async(req, res) => {
+    const {id} = req.params;
+    try {
+        await restoreCategory(id);
+        res.status(200).send("Categoria restaurada con exito.")
     } catch (error) {
         console.log(error);
     }
@@ -30,5 +52,7 @@ const categoryCreate = async(req, res) => {
 
 module.exports = {
     allCategorys,
-    categoryCreate
+    categoryCreate,
+    categoryDelete,
+    categoryRestore
 }

@@ -103,8 +103,6 @@ const editProduct = async(nombre, imagen, precio, categoria, id) => {
 }
 
 const deleteProduct = async(id) => {
-    console.log(id)
-    console.log(await Products.findOne({where: {id: id}}))
     try {
         await Products.destroy({
             where: {id: id}
@@ -133,14 +131,40 @@ const getAllCategorys = async() => {
     }
 }
 
-const createCategory = async(category) => {
+const createCategory = async(val) => {
     try {
+        let exist = await Category.findOne({
+            where: {category: val}
+        });
+        if (exist) {
+            return "La categoria ya existe"
+        }
         const newCategory = await Category.create({
-            category: category
+            category: val
         })
         return newCategory;
     } catch (error) {
         console.log(error)
+    }
+}
+
+const deleteCategory = async(id) => {
+    try {
+        await Category.destroy({
+            where: {id: id}
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const restoreCategory = async(id) => {
+    try {
+        await Category.restore({
+            where: {id: id}
+        })
+    } catch (error) {
+        console.log(error);
     }
 }
 
@@ -153,5 +177,7 @@ module.exports = {
     deleteProduct,
     restoreProduct,
     getAllCategorys,
-    createCategory
+    createCategory,
+    deleteCategory,
+    restoreCategory
 }
