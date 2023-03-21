@@ -1,64 +1,183 @@
 const { default: axios } = require("axios");
-const { Productos } = require("../db");
+const { Products, Category } = require("../db");
 const Sequelize = require("sequelize");
 const e = require("express");
 const productos = require('./products.json')
 const Op = Sequelize.Op;
 require("dotenv").config();
 
-const getProducts = async(req, res) => {
-    console.log(productos)
-    res.status(200).send(productos)
-}
-
-const getAll = async(req, res) => {
-    const db = await Productos.findAll();
-    if (!db[0]) {
-        productos.map(async e => {
-            await Productos.create({
-                nombre: e.nombre,
-                imagen: e.imagen,
-                precio: e.precio
-            });
-        });
-    }
-    const allProducts = await Productos.findAll()
-    res.status(200).send(allProducts)
-}
-
-const getByName = async(req, res) => {
-    const {name} = req.params;
-    console.log(name)
+const getAll = async() => {
     try {
-        const products = await Productos.findAll({
+        const db = await Products.findAll();
+        if (!db[0]) {
+            productos.map(async e => {
+                let actualProduct = await Products.create({
+                    nombre: e.nombre,
+                    imagen: e.imagen,
+                    precio: e.precio
+                });
+                const [actualCategory, succes] = await Category.findOrCreate({
+                    where: {
+                      category: e.categoria,
+                    },
+                  });
+                await actualCategory.addProducts(actualProduct);
+            });
+        };
+        const allProducts = await Products.findAll({
+            include:[{model: Category, attributes: ["category"]}]
+        });
+        return allProducts;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const getOne = async(id) => {
+    try {
+        const products = await Products.findOne({
             where: {
-                nombre: { [Op.iLike]: `%${name}%` }
+                id: id
             }
         })
-        console.log(products)
-        res.status(200).send(products);
+        return products;
     } catch (error) {
         console.log(error)
     }
 }
 
-const createProduct = async(req, res) => {
-    let {nombre, imagen, precio} = req.body;
+const getByCategory = async(category) => {
+    console.log(category)
     try {
-        const dbProduct = await Productos.create({
+        const actualCategory = await Category.findOne({
+            where: {
+                category: { [Op.iLike]: `%${category}%`}
+            }
+        });
+        const products = await Products.findAll({
+            include:[{model: Category, attributes: ["category"]}],
+            where: {
+                categoryId: actualCategory.id
+            }
+        })
+        return products;
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const createProduct = async(nombre, imagen, precio, categoria) => {
+    try {
+        const actualProduct = await Products.create({
             nombre: nombre,
             imagen: imagen,
             precio: precio
         });
-        res.status(200).send(dbProduct)
+        const [actualCategory, succes] = await Category.findOrCreate({
+            where: {
+                category: categoria,
+            },
+        });
+        await actualCategory.addProducts(actualProduct);
+        return actualProduct;
     } catch(error) {
         console.log(error)
     }
 };
 
+const editProduct = async(nombre, imagen, precio, categoria, id) => {
+    try {
+        const edited = await Products.update({
+                nombre,
+                imagen,
+                precio,
+                categoria
+            },
+            {
+                where: {id: id}
+        })
+        return edited;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const deleteProduct = async(id) => {
+    try {
+        await Products.destroy({
+            where: {id: id}
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const restoreProduct = async(id) => {
+    try {
+        await Products.restore({
+            where: {id: id}
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const getAllCategorys = async() => {
+    try {
+        const allCategorys = await Category.findAll()
+        return allCategorys;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const createCategory = async(val) => {
+    try {
+        let exist = await Category.findOne({
+            where: {category: val}
+        });
+        if (exist) {
+            return "La categoria ya existe"
+        }
+        const newCategory = await Category.create({
+            category: val
+        })
+        return newCategory;
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const deleteCategory = async(id) => {
+    try {
+        await Category.destroy({
+            where: {id: id}
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const restoreCategory = async(id) => {
+    try {
+        await Category.restore({
+            where: {id: id}
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 module.exports = {
-    createProduct,
     getAll,
-    getByName,
-    getProducts
+    getOne,
+    getByCategory,
+    createProduct,
+    editProduct,
+    deleteProduct,
+    restoreProduct,
+    getAllCategorys,
+    createCategory,
+    deleteCategory,
+    restoreCategory
 }
