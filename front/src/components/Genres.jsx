@@ -9,7 +9,7 @@ export function Genres() {
           <h2 className="text-xl font-semibold mb-7">Hombres</h2>
           <img
             className="hover:transform hover:scale-110 transition duration-300 ease-in-out rounded-3xl h-96"
-            src={products[30].imagen}
+            src={products[37].imagen}
             alt=""
           />
         </Link>
