@@ -3,7 +3,7 @@ import { products } from "./array";
 
 export function Product() {
   return (
-    <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 pt-12 place-items-center h-screen px-20 gap-12">
+    <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 pt-12 place-items-center px-20 gap-12 pb-36">
       {products.map((el) => {
         return (
           <div className="bg-gray-100 rounded-lg shadow-2xl p-4 w-full h-full flex justify-center items-center">
