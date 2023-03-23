@@ -4,6 +4,7 @@ import App from "./App";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Products } from "./components/Products";
+import { Flyer } from "./components/Flyer";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,13 @@ const router = createBrowserRouter([
     element: (
       <div>
         <Products />
+      </div>
+    ),
+  },{
+    path: "/123",
+    element: (
+      <div>
+        <Flyer />
       </div>
     ),
   },

@@ -1,6 +1,8 @@
 import img1 from "./x.png";
 import img2 from "./xx.png";
 import img3 from "./xxx.png";
+import perfil from "./perfil.png";
+
 export function Flyer() {
   return (
     <div className="w-full flex items-center justify-center">
@@ -27,6 +29,6 @@ export function Flyer() {
           />
         </div>
       </div>
-    </div>
+    </div> 
   );
 }
