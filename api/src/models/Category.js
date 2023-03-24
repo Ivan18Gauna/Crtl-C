@@ -9,9 +9,13 @@ module.exports = (sequelize) => {
       primaryKey: true,
       autoIncrement: true
      },
+     imagen: {
+      type: DataTypes.STRING,
+      allowNull: false
+     },
      category:{
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false
      }
   },
   {

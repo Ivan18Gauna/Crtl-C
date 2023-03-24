@@ -27,7 +27,13 @@ const getAll = async() => {
         const allProducts = await Products.findAll({
             include:[{model: Category, attributes: ["category"]}]
         });
-        return allProducts;
+        return allProducts.map(e => ({
+            nombre: e.nombre, 
+            imagen: e.imagen, 
+            precio: e.precio, 
+            categoria: e.category.category, 
+            stock: e.stock
+        }));
     } catch (error) {
         console.log(error);
     }
@@ -35,12 +41,19 @@ const getAll = async() => {
 
 const getOne = async(id) => {
     try {
-        const products = await Products.findOne({
+        const p = await Products.findOne({
             where: {
                 id: id
-            }
+            },
+            include:[{model: Category, attributes: ["category"]}]
         })
-        return products;
+        return {
+            nombre: p.nombre,
+            imagen: p.imagen,
+            precio: p.precio,
+            categoria: p.category.category,
+            stock: p.stock
+        };
     } catch (error) {
         console.log(error)
     }
@@ -60,7 +73,13 @@ const getByCategory = async(category) => {
                 categoryId: actualCategory.id
             }
         })
-        return products;
+        return products.map(e => ({
+            nombre: e.nombre, 
+            imagen: e.imagen, 
+            precio: e.precio, 
+            categoria: e.category.category, 
+            stock: e.stock
+        }));
     } catch (error) {
         console.log(error)
     }
@@ -68,6 +87,15 @@ const getByCategory = async(category) => {
 
 const createProduct = async(nombre, imagen, precio, categoria) => {
     try {
+        if(!nombre || !imagen || !precio || !categoria) {
+            return("faltan datos")
+        }
+        let exist = await Products.findOne({
+            where: {nombre: nombre}
+        })
+        if(exist) {
+            return("El producto ya existe");
+        }
         const actualProduct = await Products.create({
             nombre: nombre,
             imagen: imagen,
@@ -131,16 +159,20 @@ const getAllCategorys = async() => {
     }
 }
 
-const createCategory = async(val) => {
+const createCategory = async(val, img) => {
     try {
+        if (!val || !img) {
+            return "Faltan datos";
+        }
         let exist = await Category.findOne({
             where: {category: val}
         });
         if (exist) {
-            return "La categoria ya existe"
+            return "La categoria ya existe";
         }
         const newCategory = await Category.create({
-            category: val
+            category: val,
+            imagen: img
         })
         return newCategory;
     } catch (error) {
