@@ -6,11 +6,11 @@ import { useEffect } from "react";
  
 export function Product() {
   const {category} = useParams()
-  const dispath = useDispatch()
+  const dispatch = useDispatch()
 
   useEffect(()=>{
-    dispath(productsbycategory(category))
-  })
+    dispatch(productsbycategory(category))
+  }, [dispatch, category])
 
   const filterCategory = useSelector((state) => state.category);
   return (

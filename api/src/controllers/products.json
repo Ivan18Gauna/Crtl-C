@@ -11,7 +11,7 @@
     {
         "id": 2,
         "imagen": "https://redsport.vteximg.com.br/arquivos/ids/1127729-1000-1000/GA025006153.jpg?v=638066243004270000",
-        "nombre": "ZAPATILLAS NIKE CLASSIC CORTEZ LEATHER MUJER",
+        "nombre": "Zapatillas Nike clasic cortez leather mujer",
         "categoria": "Zapatillas",
         "catImg": "https://redsport.vteximg.com.br/arquivos/ids/1127729-1000-1000/GA025006153.jpg?v=638066243004270000",
         "precio": 10000.00,
@@ -38,7 +38,7 @@
     {
         "id": 5,
         "imagen": "https://alcatraz.com.ar/wp-content/uploads/2017/11/74369_070_s16_03.jpg",
-        "nombre": "PANTALON 5.11 TACTICAL - STRYKE DE HOMBRE",
+        "nombre": "Pantalon 5.11 tactical - strike de hombre",
         "categoria": "Pantalon",
         "catImg": "https://redsport.vteximg.com.br/arquivos/ids/1127729-1000-1000/GA025006153.jpg?v=638066243004270000",
         "precio": 10000.00,
@@ -56,7 +56,7 @@
     {
         "id": 7,
         "imagen": "https://lasaladaferia.com/wp-content/uploads/2021/06/89728fec-01e1-4837-a510-4adb6ce4a7ac.jpg",
-        "nombre": "PANTALON GABARDINA ELASTIZADA DE HOMBRE",
+        "nombre": "Pantalon gabardina elastizada de hombre",
         "categoria": "Pantalon",
         "catImg": "https://redsport.vteximg.com.br/arquivos/ids/1127729-1000-1000/GA025006153.jpg?v=638066243004270000",
         "precio": 10000.00,
@@ -74,7 +74,7 @@
     {
         "id": 9,
         "imagen": "https://drifters.com.ar/uploads/product_image/23519/650w_DriftersPDP_APP_CND5562401-001-000_Shot1.jpg",
-        "nombre": "Remera de mujer CONVERSE ESCOTE EN V BLACK",
+        "nombre": "Remera de mujer converse escote en V black",
         "categoria": "Remera",
         "catImg": "https://redsport.vteximg.com.br/arquivos/ids/1127729-1000-1000/GA025006153.jpg?v=638066243004270000",
         "precio": 10000.00,
@@ -83,7 +83,7 @@
     {
         "id": 10,
         "imagen": "https://assets.adidas.com/images/w_600,f_auto,q_auto/77dea8cfd9ee4d88832caf6b00f9d710_9366/Remera_Argentina_Campeon_2022_Blanco_IR0032_21_model.jpg",
-        "nombre": "REMERA ARGENTINA CAMPEÓN 2022",
+        "nombre": "Remera argrntina campeón 2022",
         "categoria": "Remera",
         "catImg": "https://redsport.vteximg.com.br/arquivos/ids/1127729-1000-1000/GA025006153.jpg?v=638066243004270000",
         "precio": 10000.00,
