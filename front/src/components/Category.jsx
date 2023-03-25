@@ -7,7 +7,7 @@ export function Category() {
       {category.map((el) => {
         return (
           <div className="bg-gray-100 rounded-lg shadow-2xl p-4 w-full md:w-1/2 flex justify-center items-center">
-            <Link to="/products">
+            <Link to={"/products/" +el.categoria}>
               <div>
                 <h2 className="text-xl font-semibold mb-7">{el.categoria}</h2>
               </div>

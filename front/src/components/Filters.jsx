@@ -1,7 +1,7 @@
 export function Filters() {
     return (
-        <div className="flex flex-row  w-full bg-gray-100">
-        <select className="mx-auto my-2 w-full text-center">
+        <div className="flex flex-row  w-full border">
+        <select className="mx-auto my-2 w-full text-center border">
           <option hidden option value="1">
             Categorias
           </option>
@@ -12,7 +12,7 @@ export function Filters() {
           <option value="6">Accesorios</option>
         </select>
 
-        <select className="mx-auto my-2 w-full text-center">
+        <select className="mx-auto my-2 w-full text-center border">
           <option hidden option value="1">
             Generos
           </option>
@@ -23,7 +23,7 @@ export function Filters() {
 
        
 
-        <select className="mx-auto my-2 w-full text-center">
+        <select className="mx-auto my-2 w-full text-center border">
           <option hidden option value="1">
             Filtro 4
           </option>

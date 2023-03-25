@@ -4,7 +4,8 @@ import App from "./App";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Products } from "./components/Products";
-import { Flyer } from "./components/Flyer";
+import { store } from "./redux/store/index";
+import { Provider } from "react-redux";
 
 const router = createBrowserRouter([
   {
@@ -16,24 +17,24 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/products",
+    path: "/products/:category",
     element: (
       <div>
         <Products />
-      </div>
-    ),
-  },{
-    path: "/123",
-    element: (
-      <div>
-        <Flyer />
       </div>
     ),
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
+    
   <React.StrictMode>
-    <RouterProvider router={router} />
+      {/* <RouterProvider router={router} store={store} /> */}
+      <Provider router={router} store={store}>
+        <App/>
+      </Provider>
+
+      
   </React.StrictMode>
+    
 );
