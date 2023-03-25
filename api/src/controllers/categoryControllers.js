@@ -21,9 +21,9 @@ const allCategorys = async(req, res) => {
 }
 
 const categoryCreate = async(req, res) => {
-    let {category} = req.body;
+    let {category, imagen} = req.body;
     try {
-        let newCategory = await createCategory(category);
+        let newCategory = await createCategory(category, imagen);
         res.status(200).send(newCategory)
     } catch (error) {
         console.log(error);
