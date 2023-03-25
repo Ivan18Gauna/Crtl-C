@@ -19,6 +19,7 @@ const getAll = async() => {
                 const [actualCategory, succes] = await Category.findOrCreate({
                     where: {
                       category: e.categoria,
+                      imagen: e.catImg
                     },
                   });
                 await actualCategory.addProducts(actualProduct);

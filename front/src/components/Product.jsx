@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { products } from "./array";
+import {productsbycategory} from "../redux/actions/index"
 import {useDispatch, useSelector} from 'react-redux'
 import { useEffect } from "react";
  
