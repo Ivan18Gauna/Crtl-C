@@ -1,14 +1,22 @@
 import axios from "axios";
 
 export function productsbycategory(category) {
-  return async function (dispatch) {
-    const filter = await axios(
-      `http://localhost:3001/products/zapatilla`
-    );
-    console.log("byCategory", filter.data)
+  return async function(dispatch) {
+    const json = await axios.get(`/products/${category}`);
     return dispatch({
       type: "FILTER_CATEGORY",
-      payload: filter.data,
+      payload: json.data,
     });
   };
+}
+
+export function allProducts() {
+  return async function(dispatch) {
+    const json = await axios.get('/products');
+    console.log('todos los productos')
+    return dispatch({
+      type: "ALL_PRODUCTS",
+      payload: json.data
+    })
+  }
 }
