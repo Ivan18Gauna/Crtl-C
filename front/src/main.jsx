@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
@@ -6,6 +7,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Products } from "./components/Products";
 import { store } from "./redux/store/index";
 import { Provider } from "react-redux";
+
+axios.defaults.baseURL = "http://localhost:3001";
 
 const router = createBrowserRouter([
   {
