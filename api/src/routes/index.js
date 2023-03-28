@@ -1,7 +1,7 @@
 require('dotenv').config();
 const axios = require('axios')
 const { Router } = require('express');
-const {allProducts, oneProduct, productByCategory, productCreate, productEdit, productDelete, productRestore} = require('../controllers/productControllers');
+const {allProducts, oneProduct, productByGen, productByCategory, productCreate, productEdit, productDelete, productRestore} = require('../controllers/productControllers');
 const {allCategorys, categoryCreate, categoryDelete, categoryRestore} = require('../controllers/categoryControllers')
 
 const router = Router();
@@ -9,6 +9,8 @@ const router = Router();
             Rutas de producto
 */
 router.get('/product/:id', oneProduct);
+
+router.get('/product/gen/:gen', productByGen)
  
 router.get('/products/:category', productByCategory);
 
