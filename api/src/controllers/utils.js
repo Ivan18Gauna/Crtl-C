@@ -12,6 +12,7 @@ const getAll = async() => {
         if (!db[0]) {
             productos.map(async e => {
                 let actualProduct = await Products.create({
+                    gen: e.gen,
                     nombre: e.nombre,
                     imagen: e.imagen,
                     precio: e.precio
@@ -29,6 +30,7 @@ const getAll = async() => {
             include:[{model: Category, attributes: ["category"]}]
         });
         return allProducts.map(e => ({
+            id: e.id,
             nombre: e.nombre, 
             imagen: e.imagen, 
             precio: e.precio, 
@@ -60,6 +62,17 @@ const getOne = async(id) => {
     }
 }
 
+const getByGen = async(gen) => {
+    try {
+        const products = await Products.findAll({
+            where: {gen: gen}
+        });
+        return products;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 const getByCategory = async(category) => {
     console.log(category)
     try {
@@ -86,7 +99,7 @@ const getByCategory = async(category) => {
     }
 }
 
-const createProduct = async(nombre, imagen, precio, categoria) => {
+const createProduct = async(nombre, gen, imagen, precio, categoria) => {
     try {
         if(!nombre || !imagen || !precio || !categoria) {
             return("faltan datos")
@@ -98,6 +111,7 @@ const createProduct = async(nombre, imagen, precio, categoria) => {
             return("El producto ya existe");
         }
         const actualProduct = await Products.create({
+            gen: gen,
             nombre: nombre,
             imagen: imagen,
             precio: precio
@@ -114,9 +128,10 @@ const createProduct = async(nombre, imagen, precio, categoria) => {
     }
 };
 
-const editProduct = async(nombre, imagen, precio, categoria, id) => {
+const editProduct = async(nombre, gen, imagen, precio, categoria, id) => {
     try {
         const edited = await Products.update({
+                gen,
                 nombre,
                 imagen,
                 precio,
@@ -204,6 +219,7 @@ const restoreCategory = async(id) => {
 module.exports = {
     getAll,
     getOne,
+    getByGen,
     getByCategory,
     createProduct,
     editProduct,

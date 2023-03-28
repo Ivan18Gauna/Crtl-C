@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "gen": "femenino",
         "imagen": "https://celadasa.vtexassets.com/arquivos/ids/211801-800-auto?v=637925433097900000&width=800&height=auto&aspect=true",
         "nombre": "Zapatillas Puma Mayze Mujer",
         "categoria": "Zapatillas",
@@ -10,6 +11,7 @@
     },
     {
         "id": 2,
+        "gen": "femenino",
         "imagen": "https://redsport.vteximg.com.br/arquivos/ids/1127729-1000-1000/GA025006153.jpg?v=638066243004270000",
         "nombre": "Zapatillas Nike clasic cortez leather mujer",
         "categoria": "Zapatillas",
@@ -37,6 +39,7 @@
     },
     {
         "id": 5,
+        "gen": "masculino",
         "imagen": "https://alcatraz.com.ar/wp-content/uploads/2017/11/74369_070_s16_03.jpg",
         "nombre": "Pantalon 5.11 tactical - strike de hombre",
         "categoria": "Pantalon",
@@ -55,6 +58,7 @@
     },
     {
         "id": 7,
+        "gen": "masculino",
         "imagen": "https://lasaladaferia.com/wp-content/uploads/2021/06/89728fec-01e1-4837-a510-4adb6ce4a7ac.jpg",
         "nombre": "Pantalon gabardina elastizada de hombre",
         "categoria": "Pantalon",
@@ -64,6 +68,7 @@
     },
     {
         "id": 8,
+        "gen": "masculino",
         "imagen": "https://media.revistagq.com/photos/5ca5eca84c7adb138100c90a/3:4/w_318,h_424,c_limit/el_pantalon_de_vestir_894893361.jpg",
         "nombre": "Pantalon de vestir Hombre",
         "categoria": "Pantalon",
@@ -73,6 +78,7 @@
     },
     {
         "id": 9,
+        "gen": "femenino",
         "imagen": "https://drifters.com.ar/uploads/product_image/23519/650w_DriftersPDP_APP_CND5562401-001-000_Shot1.jpg",
         "nombre": "Remera de mujer converse escote en V black",
         "categoria": "Remera",
@@ -91,6 +97,7 @@
     },
     {
         "id": 11,
+        "gen": "masculino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/40212-product_list_sm/remera-de-hombre-cooper.jpg",
         "nombre": "Remera de hombre Cooper",
         "categoria": "Remera",
@@ -100,6 +107,7 @@
     },
     {
         "id": 12,
+        "gen": "masculino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/34878-product_lg/remera-de-hombre-hanoi-uv.jpg",
         "nombre": "Remera de hombre Hanoi UV",
         "categoria": "Remera",
@@ -109,6 +117,7 @@
     },
     {
         "id": 13,
+        "gen": "masculino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/41537-product_lg/remera-de-hombre-icon.jpg",
         "nombre": "Remera de hombre Icon",
         "categoria": "Remera",
@@ -118,6 +127,7 @@
     },
     {
         "id": 14,
+        "gen": "masculino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/43380-product_lg/remera-de-hombre-plans-heritage.jpg",
         "nombre": "Remera de hombre Plans - Heritage",
         "categoria": "Remera",
@@ -127,6 +137,7 @@
     },
     {
         "id": 15,
+        "gen": "masculino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/23477-product_lg/remera-de-hombre-crash.jpg",
         "nombre": "Remera de hombre Crash",
         "categoria": "Remera",
@@ -136,6 +147,7 @@
     },
     {
         "id": 16,
+        "gen": "femenino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/37908-product_lg/remera-de-mujer-lisa-ml.jpg",
         "nombre": "Remera de mujer Lisa M/L",
         "categoria": "Remera",
@@ -145,6 +157,7 @@
     },
     {
         "id": 17,
+        "gen": "femenino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/41007-product_lg/remera-de-mujer-latitud-mc.jpg",
         "nombre": "Remera de mujer Latitud M/C",
         "categoria": "Remera",
@@ -154,6 +167,7 @@
     },
     {
         "id": 18,
+        "gen": "femenino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/26253-product_lg/remera-de-mujer-verena.jpg",
         "nombre": "Remera de mujer Verena",
         "categoria": "Remera",
@@ -163,6 +177,7 @@
     },
     {
         "id": 19,
+        "gen": "femenino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/43847-product_lg/remera-de-mujer-fitz-roy.jpg",
         "nombre": "Remera de mujer Fitz Roy",
         "categoria": "Remera",
@@ -172,6 +187,7 @@
     },
     {
         "id": 20,
+        "gen": "femenino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/26188-product_lg/musculosa-de-mujer-verona.jpg",
         "nombre": "Musculosa de mujer Verona",
         "categoria": "Remera",
@@ -181,6 +197,7 @@
     },
     {
         "id": 21,
+        "gen": "niño",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/31941-product_lg/zapatillas-de-ninos-terra.jpg",
         "nombre": "Zapatillas de niños Terra",
         "categoria": "Zapatillas",
@@ -190,6 +207,7 @@
     },
     {
         "id": 22,
+        "gen": "femenino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/43575-product_lg/zapatillas-de-mujer-sensse-t4.jpg",
         "nombre": "Zapatillas de mujer Sensse T4",
         "categoria": "Zapatillas",
@@ -199,6 +217,7 @@
     },
     {
         "id": 23,
+        "gen": "masculino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/43527-product_lg/zapatillas-de-hombre-loeb.jpg",
         "nombre": "Zapatillas de hombre Loeb - Heritage",
         "categoria": "Zapatillas",
@@ -208,6 +227,7 @@
     },
     {
         "id": 24,
+        "gen": "femenino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/43337-product_lg/zapatillas-de-mujer-maddsen.jpg",
         "nombre": "Zapatillas de mujer Maddsen - Heritage",
         "categoria": "Zapatillas",
@@ -217,6 +237,7 @@
     },
     {
         "id": 25,
+        "gen": "femenino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/41815-product_lg/zapatillas-de-mujer-fire-t3.jpg",
         "nombre": "Zapatillas de mujer Fire T3",
         "categoria": "Zapatillas",
@@ -226,6 +247,7 @@
     },
     {
         "id": 26,
+        "gen": "femenino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/25896-product_lg/zapatillas-de-mujer-explorer.jpg",
         "nombre": "Zapatillas de mujer Explorer",
         "categoria": "Zapatillas",
@@ -235,6 +257,7 @@
     },
     {
         "id": 27,
+        "gen": "masculino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/43652-product_lg/zapatillas-de-hombre-viper-ii.jpg",
         "nombre": "Zapatillas de hombre Viper II",
         "categoria": "Zapatillas",
@@ -244,6 +267,7 @@
     },
     {
         "id": 28,
+        "gen": "niño",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/42893-product_lg/zapatillas-de-nino-hely.jpg",
         "nombre": "Zapatillas de niño Hely",
         "categoria": "Zapatillas",
@@ -253,6 +277,7 @@
     },
     {
         "id": 29,
+        "gen": "masculino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/43506-product_lg/zapatillas-de-hombre-kita.jpg",
         "nombre": "Zapatillas de hombre Kita",
         "categoria": "Zapatillas",
@@ -262,6 +287,7 @@
     },
     {
         "id": 30,
+        "gen": "femenino",
         "imagen": "https://d368r8jqz0fwvm.cloudfront.net/43568-product_lg/zapatillas-de-mujer-kita.jpg",
         "nombre": "Zapatillas de mujer Kita",
         "categoria": "Zapatillas",
