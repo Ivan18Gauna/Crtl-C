@@ -1,5 +1,6 @@
 import { BiMenu, BiSearchAlt } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import Search from "./Search";
 
 export function NavBar() {
   const openMenu = () => {
@@ -42,16 +43,13 @@ export function NavBar() {
               <Link to="" className="lg:mr-7 mb-8 lg:mb-0">
                 PROMOS Y CUOTAS
               </Link>
-              <Link to="" className="">
+              <Link to="">
                 CONTACTO
               </Link>
             </div>
             <div className="flex  flex-row text-center  justify-center">
-              <div className="text-black border border-black py-2.5 px-5 rounded-md hover:bg-gray-300 hover:text-black hover:border-black transition duration-500 ease-in-out lg:mr-5 mb-4 lg:mb-0 flex justify-center items-center">
-                <BiSearchAlt/>
-              </div>
               <div>
-                <input type="text" className="py-2.5 px-5 rounded-xl" />
+                <Search />
               </div>
             </div>
           </div>

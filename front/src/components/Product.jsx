@@ -1,5 +1,4 @@
 import { Link, useParams } from "react-router-dom";
-import { products } from "./array";
 import { allProducts, productsbycategory } from "../redux/actions/index";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -57,6 +56,7 @@ export function Product() {
       </div>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 pt-12 place-items-center px-10 gap-12 pb-36 ">
         {filterCategory.map((el) => {
+          console.log(el,'en busca del id')
           return (
             <div className="bg-gray-100 rounded-lg shadow-2xl p-4 w-full h-full flex justify-center items-center">
             <Link to={"/details/" +el.nombre}>

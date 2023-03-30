@@ -13,8 +13,7 @@ export function productsbycategory(category) {
 export function forId(id) {
   return async function(dispatch) {
 
-    const byId = await axios.get(`/product/4`);
-    console.log(id,'aaaaaaaaaaaa');
+    const byId = await axios.get(`/product/15`);
     return dispatch({
       type: "FILTER_ID",
       payload: byId.data,
