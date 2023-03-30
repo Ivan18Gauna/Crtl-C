@@ -24,6 +24,10 @@ module.exports = (sequelize) => {
      stock:{
       type: DataTypes.BOOLEAN,
       defaultValue: true
+     },
+     gen:{
+      type: DataTypes.ENUM('masculino', 'femenino', 'niño', 'unisex'),
+      defaultValue: 'unisex'
      }
   },
   {

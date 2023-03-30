@@ -7,6 +7,7 @@ require("dotenv").config();
 const {
     getAll,
     getOne,
+    getByGen,
     getByCategory,
     createProduct,
     editProduct,
@@ -28,6 +29,16 @@ const oneProduct = async(req, res) => {
     try {
         const product = await getOne(id);
         res.status(200).send(product);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const productByGen = async(req, res) => {
+    let {gen} = req.params;
+    try {
+        const products = await getByGen(gen);
+        res.status(200).send(products);
     } catch (error) {
         console.log(error);
     }
@@ -88,6 +99,7 @@ const productRestore = async(req, res) => {
 module.exports = {
     allProducts,
     oneProduct,
+    productByGen,
     productByCategory,
     productCreate,
     productEdit,
