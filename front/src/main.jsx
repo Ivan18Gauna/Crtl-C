@@ -7,6 +7,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Products } from "./components/Products";
 import { store } from "./redux/store/index";
 import { Provider } from "react-redux";
+import Details from "./components/Details";
+import Carousel from "./components/Carousel";
 
 axios.defaults.baseURL = "http://localhost:3001";
 
@@ -24,6 +26,20 @@ const router = createBrowserRouter([
     element: (
       <div>
         <Products />
+      </div>
+    ),
+  },{
+    path: "/details/:id",
+    element: (
+      <div>
+        <Details/>
+      </div>
+    ),
+  },{
+    path: "/hola",
+    element: (
+      <div>
+        <Carousel/>
       </div>
     ),
   },

@@ -8,7 +8,7 @@ export function Products() {
   return (
     <div>
       <NavBar />
-      <Filters />
+      {/* <Filters /> */}
       <Product/>
       <Info />
     </div>

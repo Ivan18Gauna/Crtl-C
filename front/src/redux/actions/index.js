@@ -3,10 +3,21 @@ import axios from "axios";
 export function productsbycategory(category) {
   return async function(dispatch) {
     const json = await axios.get(`/products/${category}`);
-    console.log(json);
     return dispatch({
       type: "FILTER_CATEGORY",
       payload: json.data,
+    });
+  };
+}
+
+export function forId(id) {
+  return async function(dispatch) {
+
+    const byId = await axios.get(`/product/4`);
+    console.log(id,'aaaaaaaaaaaa');
+    return dispatch({
+      type: "FILTER_ID",
+      payload: byId.data,
     });
   };
 }

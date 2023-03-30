@@ -5,15 +5,13 @@ export function Filters() {
 
   const handle = (e) => {
     e.preventDefault();
-    dispatch()
+    dispatch(getOrder(e.target.value))
   };
   return (
     <div className="flex flex-row  w-full border">
       <select
         className="mx-auto my-2 w-full text-center border"
-        onChange={(e) => {
-          handle(e);
-        }}
+        
       >
         <option hidden option value="1">
           Categorias
