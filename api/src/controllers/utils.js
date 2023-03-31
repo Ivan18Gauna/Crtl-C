@@ -88,6 +88,7 @@ const getByCategory = async(category) => {
             }
         })
         return products.map(e => ({
+            id: e.id,
             nombre: e.nombre, 
             imagen: e.imagen, 
             precio: e.precio, 
