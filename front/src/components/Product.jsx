@@ -56,10 +56,10 @@ export function Product() {
       </div>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 pt-12 place-items-center px-10 gap-12 pb-36 ">
         {filterCategory.map((el) => {
-          console.log(el,'en busca del id')
+          console.log(el.id,'en busca del id')
           return (
             <div className="bg-gray-100 rounded-lg shadow-2xl p-4 w-full h-full flex justify-center items-center">
-            <Link to={"/details/" +el.nombre}>
+            <Link to={"/details/" +el.id}>
                 <h2 className="text-xl font-semibold mb-7 flex justify-center items-center">
                   {el.nombre}
                 </h2>
