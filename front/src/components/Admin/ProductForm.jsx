@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import DropZone from './DropZone'
 
 const ProductForm = () => {
 
@@ -58,7 +57,6 @@ let arr = ["1", "2", "3", "4"]
         <div>
             <p>{newProduct.categoria}</p>
         </div>
-        <DropZone/>
     </>
   )
 }
