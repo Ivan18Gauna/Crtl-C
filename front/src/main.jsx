@@ -5,6 +5,7 @@ import App from "./App";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Products } from "./components/Products";
+import  Dashboard  from "./components/Admin/Dashboard";
 import { store } from "./redux/store/index";
 import { Provider } from "react-redux";
 
@@ -27,6 +28,14 @@ const router = createBrowserRouter([
       </div>
     ),
   },
+  {
+    path: "/dashboard",
+    element: (
+      <div>
+        <Dashboard/>
+      </div>
+    )
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
