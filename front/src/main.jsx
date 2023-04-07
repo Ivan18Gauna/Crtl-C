@@ -9,6 +9,7 @@ import { store } from "./redux/store/index";
 import { Provider } from "react-redux";
 import Details from "./components/Details";
 import Carousel from "./components/Carousel";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 axios.defaults.baseURL = "http://localhost:3001";
 
@@ -40,6 +41,13 @@ const router = createBrowserRouter([
     element: (
       <div>
         <Carousel/>
+      </div>
+    ),
+  },{
+    path: "/dashboard",
+    element: (
+      <div>
+        <Dashboard/>
       </div>
     ),
   },
